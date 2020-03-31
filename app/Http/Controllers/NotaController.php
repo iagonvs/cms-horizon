@@ -16,6 +16,7 @@ class NotaController extends Controller
 {
     public function index()
     {   
+        //Retornando via GET os dados da tabela Nota, sem calculo
         $nota = new Nota();
 
         $nota = DB::table('nota')
@@ -28,7 +29,8 @@ class NotaController extends Controller
     }
 
     public function notafinal()
-    {
+    {   
+        //Retornando as notas, com o cálculo de média parcial e sabendo o campeão da bateria
         $nota = new Nota();
 
         $select = "sum((notaParcial1+notaParcial2+notaParcial3)/3) as total";
@@ -46,28 +48,6 @@ class NotaController extends Controller
        
        return $nota;
     }
-
-    public function final($id)
-    {
-        $notafinal = new Nota();
-
-        $select = "sum((notaParcial1+notaParcial2+notaParcial3)/3) as total ";
-        $select .= ",Onda, Bateria, Surfista, max(Data)";
-
-        
-        $notafinal = DB::table('nota')
-                ->join('onda','nota.Onda','onda.id')
-                ->join('bateria','onda.Bateria','bateria.id')
-                ->join('surfista','onda.Surfista','surfista.numero')
-                ->select(\DB::raw($select))
-                ->groupBy('Onda','Bateria','Surfista')
-                ->orderBy('Onda', 'desc')->take(2)
-                ->Where('Onda', $id)
-                ->get();
-       
-       return $notafinal;
-    }
-    
 
     public function store(Request $request)
     {

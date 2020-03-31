@@ -18,25 +18,24 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+//Surfista
 Route::get('/', 'SurfistaController@index');
 Route::post('/', 'SurfistaController@store');
-Route::delete('/{id}', 'SurfistaController@delete');
 
 
+//Bateria
 Route::get('/bateria', 'BateriaController@index');
 Route::post('/bateria/store', 'BateriaController@store');
-Route::delete('/bateria/{id}', 'BateriaController@delete');
 
+//Onda
 Route::get('/onda', 'OndaController@index');
 Route::post('/onda/store', 'OndaController@store');
-Route::delete('/onda/{id}', 'OndaController@delete');
 
+//Nota
 Route::get('/nota', 'NotaController@index');
 Route::post('/nota/store', 'NotaController@store');
 Route::get('/nota/notafinal', 'NotaController@notafinal');
-Route::get('/nota/final/{id}', 'NotaController@final');
-Route::delete('/nota/{id}', 'NotaController@delete');
+
 
 
 

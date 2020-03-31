@@ -8,6 +8,7 @@ import { Nota } from './nota';
 })
 export class NotaService {
   public notas: Nota[] = [];
+  // Dando um GET na rota Route::get('/nota/notafinal', 'NotaController@notafinal'); e trazendo os dados
   constructor(private http: HttpClient) {
      this.http.get('/api/nota/notafinal').subscribe(
     (notas: any[]) => {
@@ -20,6 +21,8 @@ export class NotaService {
   ); 
 
 }
+
+//Dando um POST na rota Route::post('/nota/store', 'NotaController@store');
 salvar(nota: Nota){
   const uploadData = new FormData();
   uploadData.append('notaParcial1', nota.notaParcial1);

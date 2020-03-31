@@ -7,6 +7,7 @@ import { Onda } from './onda';
 })
 export class OndaService {
   public ondas: Onda[] = [];
+   // Dando um GET na rota Route::get('/onda', 'OndaController@index'); e trazendo os dados
   constructor(private http: HttpClient) {
     this.http.get('/api/onda/').subscribe(
       (ondas: any[]) => {
@@ -18,6 +19,7 @@ export class OndaService {
       }
     );
    }
+   //Dando um POST na rota Route::post('/onda/store', 'OndaController@store');
    salvar(onda: Onda){
     const uploadData = new FormData();
     uploadData.append('Bateria', onda.Bateria);

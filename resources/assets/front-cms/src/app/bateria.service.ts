@@ -9,7 +9,7 @@ import { Bateria } from './bateria';
 export class BateriaService {
 
   public baterias: Bateria[] = [];
-
+ // Dando um GET na rota Route::get('/bateria', 'BateriaController@index'); e trazendo os dados
   constructor(private http: HttpClient) {
     this.http.get('/api/bateria/').subscribe(
       (baterias: any[]) => {
@@ -21,7 +21,7 @@ export class BateriaService {
       }
     );
    }
-
+//Dando um POST na rota Route::post('/bateria/store', 'BateriaController@store');
    salvar(bateria: Bateria){
     const uploadData = new FormData();
     uploadData.append('Surfista1', bateria.Surfista1);

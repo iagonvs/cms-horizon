@@ -9,7 +9,7 @@ import { ThrowStmt } from '@angular/compiler';
 export class SurfistaService {
 
   public surfistas: Surfista[] = [];
-
+ // Dando um GET na rota Route::get('/', 'SurfistaController@index'); e trazendo os dados
   constructor(private http: HttpClient) {
     this.http.get('/api/').subscribe(
       (surfistas: any[]) => {
@@ -21,7 +21,7 @@ export class SurfistaService {
       }
     );
    }
-
+//Dando um POST na rota Route::post('/', 'SurfistaController@store');
    salvar(surfista: Surfista){
      const uploadData = new FormData();
      uploadData.append('nome', surfista.nome);
