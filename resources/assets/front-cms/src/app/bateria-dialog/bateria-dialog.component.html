@@ -1,0 +1,23 @@
+<form class="example-form">
+  <h1>Adicionar Bateria</h1>
+    <mat-form-field>
+        <mat-label>Surfista 1</mat-label>
+        <mat-select name="Surfista1" [(ngModel)]="dados.bateria.Surfista1">
+          <mat-option *ngFor="let s of surfistas" value= {{s.numero}}>
+            {{s.nome}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Surfista 2</mat-label>
+        <mat-select name="Surfista2"  [(ngModel)]="dados.bateria.Surfista2">
+          <mat-option *ngFor="let s of surfistas" value= {{s.numero}}>
+            {{s.nome}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    <button mat-button color="primary" class="float-button" (click)="salvar()">
+      Adicionar Bateria
+    </button>
+  </form>

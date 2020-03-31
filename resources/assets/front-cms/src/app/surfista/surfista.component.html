@@ -1,0 +1,26 @@
+<h1>Surfistas</h1>
+<table mat-table class="mat-elevation-z8">
+  <thead>
+    <tr>
+      <th mat-header-cell> Nome do Surfista </th>
+      <th mat-header-cell> Numero do Surfista </th>
+      <th mat-header-cell> País do Surfista </th>
+
+    </tr>
+  </thead>
+  <tr *ngFor="let s of surfistas">
+
+    <ng-container matColumnDef="nome">
+      <td mat-cell> {{s.nome}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="numero">
+      <td mat-cell> {{s.numero}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pais">
+      <td mat-cell>{{s.pais}} </td>
+    </ng-container>
+  </tr>
+
+</table>

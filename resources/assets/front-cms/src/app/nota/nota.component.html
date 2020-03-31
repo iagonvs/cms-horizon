@@ -1,0 +1,46 @@
+<h1>Notas</h1>
+<table mat-table class="mat-elevation-z8">
+  <thead>
+    <tr>
+      <th mat-header-cell> Onda</th>
+      <th mat-header-cell> Bateria</th>
+      <th mat-header-cell> Numero do Surfista</th>
+      <th mat-header-cell> Nota Parcial 1 </th>
+      <th mat-header-cell> Nota Parcial 2 </th>
+      <th mat-header-cell> Nota Parcial 3 </th>
+      <th mat-header-cell> Média Parcial</th>
+
+    </tr>
+  </thead>
+  <tr *ngFor="let nota of notas">
+
+    <ng-container matColumnDef="Onda">
+      <td mat-cell>{{nota.Onda}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Bateria">
+      <td mat-cell> {{nota.Bateria}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Surfista">
+      <td mat-cell>{{nota.Surfista}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="notaParcial1">
+      <td mat-cell>{{nota.notaParcial1}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="notaParcial2">
+      <td mat-cell>{{nota.notaParcial2}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="notaParcial3">
+      <td mat-cell>{{nota.notaParcial3}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="total">
+      <td mat-cell>{{nota.total}}</td>
+    </ng-container>
+  </tr>
+
+</table>

@@ -1,0 +1,26 @@
+<h1>Ondas</h1>
+<table mat-table class="mat-elevation-z8">
+  <thead>
+    <tr>
+      <th mat-header-cell> Onda </th>
+      <th mat-header-cell> Bateria </th>
+      <th mat-header-cell> Surfista </th>
+
+    </tr>
+  </thead>
+  <tr *ngFor="let onda of ondas">
+
+    <ng-container matColumnDef="id">
+      <td mat-cell> {{onda.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Bateria">
+      <td mat-cell> {{onda.Bateria}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Surfista">
+      <td mat-cell>{{onda.nome}} </td>
+    </ng-container>
+  </tr>
+
+</table>

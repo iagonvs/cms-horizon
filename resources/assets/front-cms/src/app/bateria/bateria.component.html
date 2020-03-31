@@ -1,0 +1,26 @@
+<h1>Baterias</h1>
+<table mat-table class="mat-elevation-z8">
+  <thead>
+    <tr>
+      <th mat-header-cell> Bateria </th>
+      <th mat-header-cell> Surfista 1 </th>
+      <th mat-header-cell> Surfista 2 </th>
+
+    </tr>
+  </thead>
+  <tr *ngFor="let b of baterias">
+
+    <ng-container matColumnDef="id">
+      <td mat-cell> {{b.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Surfista1">
+      <td mat-cell> {{b.s1}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Surfista2">
+      <td mat-cell>{{b.s2}} </td>
+    </ng-container>
+  </tr>
+
+</table>

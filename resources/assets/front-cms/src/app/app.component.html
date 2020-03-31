@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+    <span>Circiuto Mundial de Surf - 2020</span>
+</mat-toolbar>
+
+<mat-divider></mat-divider>
+<app-surfista></app-surfista>
+<app-bateria></app-bateria>
+<app-onda></app-onda>
+<app-nota></app-nota>
+
+
+<button mat-raised-button color="primary" class="float-button" (click)="openDialog()">
+    Adicionar Surfista
+</button>
+
+<button mat-raised-button color="primary" class="float-button-bateria" (click)="openDialog2()">
+    Adicionar Bateria
+</button>
+
+<button mat-raised-button color="primary" class="float-button-onda" (click)="openDialog3()">
+    Adicionar Onda
+</button>
+
+<button mat-raised-button color="primary" class="float-button-nota" (click)="openDialog4()">
+    Adicionar Nota
+
+</button>

@@ -1,0 +1,16 @@
+<form class="example-form">
+  <h1>Adicionar Surfista</h1>
+    <mat-form-field class="example-full-width">
+      <mat-label>Nome do Surfista</mat-label>
+      <input matInput placeholder="Digite o nome" name="nome" [(ngModel)]="dados.surfista.nome">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>País</mat-label>
+      <input matInput placeholder="Ex: Brasil, EUA, etc" name="pais" [(ngModel)]="dados.surfista.pais">
+      <!-- <textarea matInput placeholder="Ex: Brasil, EUA, etc"></textarea> -->
+    </mat-form-field>
+    <button mat-button color="primary" class="float-button" (click)="salvar()">
+      Adicionar Surfista
+    </button>
+  </form>

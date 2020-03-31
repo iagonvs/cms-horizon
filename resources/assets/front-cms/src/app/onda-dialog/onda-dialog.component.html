@@ -1,0 +1,23 @@
+<form class="example-form">
+  <h1>Adicionar Onda</h1>
+    <mat-form-field>
+        <mat-label>Bateria</mat-label>
+        <mat-select name="Bateria" [(ngModel)]="dados.onda.Bateria">
+          <mat-option *ngFor="let b of baterias" value= {{b.id}}>
+            {{b.id}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Surfista</mat-label>
+        <mat-select name="Surfista"  [(ngModel)]="dados.onda.Surfista">
+          <mat-option *ngFor="let s of surfistas" value= {{s.numero}}>
+            {{s.nome}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    <button mat-button color="primary" class="float-button" (click)="salvar()">
+      Adicionar Onda
+    </button>
+  </form>

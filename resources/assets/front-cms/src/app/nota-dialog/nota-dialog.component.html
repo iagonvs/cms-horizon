@@ -1,0 +1,31 @@
+<form class="example-form">
+  <h1>Adicionar Nota</h1>
+    <mat-form-field>
+        <mat-label>Onda</mat-label>
+        <mat-select name="Onda" [(ngModel)]="dados.nota.Onda">
+          <mat-option *ngFor="let o of ondas" value= {{o.id}}>
+            {{o.id}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Nota 1</mat-label>
+      <input matInput placeholder="Primeira nota" name="notaParcial1" [(ngModel)]="dados.nota.notaParcial1">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Nota 2</mat-label>
+        <input matInput placeholder="Segunda nota" name="notaParcial2" [(ngModel)]="dados.nota.notaParcial2">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Nota 3</mat-label>
+        <input matInput placeholder="Terceira nota" name="notaParcial3" [(ngModel)]="dados.nota.notaParcial3">
+      </mat-form-field>
+    
+
+    <button mat-button color="primary" class="float-button" (click)="salvar()">
+      Adicionar Nota
+    </button>
+  </form>
